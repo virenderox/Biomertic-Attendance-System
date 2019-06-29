@@ -88,7 +88,7 @@ def Attendence_name(name,A):
 
 
 def start():
-    end_time = datetime.now() + timedelta(seconds=8)
+    end_time = datetime.now() + timedelta(seconds=1800)
     while datetime.now() < end_time:
         speak("Welcome to the Attendence System")
         speak("Please read the instruction carefully.")
