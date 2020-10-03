@@ -9,6 +9,8 @@ import time
 from datetime import datetime, timedelta, date
 import schedule
 import attendence_file
+import numpy
+import pandas
 
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
@@ -94,7 +96,7 @@ def start():
         speak("Please read the instruction carefully.")
         print("\n              Welcome to the Attendence System.")
         print(" 1.) Please enter 'c' to start the camera.")
-        print(" 2.) please dont move until camera recognize yourself or it close.")
+        print(" 2.) please dont move until camera recognizes you or it is closed.")
         print(" 3.) please dont use moblie to recognize yourself , if you doing so action must be take against yourself.")
         print(" 4.) please come in front of camera at a time for your Attendence , if mutilple face is detected no attendence is there against you.")
         print(" 5.) Thank you for your paciances")
@@ -105,13 +107,13 @@ def start():
         if ic == 'c':
             h,q = camera_on()
             if h not in lis:
-                speak("Your Attendence is done....")
-                print("Your Attendence is done....")
+                speak("Your Attendence is marked....")
+                print("Your Attendence is marked....")
             else:
                 speak("Attendence is already done...")
                 print("Attendence is already done...")
         else:
-            speak("please read the instrustion carefully")
+            speak("Please read the instrustions carefully")
             print("Invalid Key")
     for i in q:
         if i not in lis:
